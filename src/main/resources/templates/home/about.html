@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Me</title>
+    <title th:text="${presentation.title}">Omkring Mig</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
-<body>
+<body class="about">
+<main class="kristian-container">
 
+    <h1 th:text="${presentation.title}">Lidt om mig</h1>
+<div>
+    <div th:utext="${presentation.description}">
+        <h2>Navn:</h2>
+        <p>Mit navn er Kristian Meyer Steffensen</p>
+        <h2>Fødselsdag:</h2>
+        <p>Jeg er født den 25. november 2002 - 22 år</p>
+        <h2>Bor:</h2>
+        <p>Bor i Ishøj Landsby</p>
+    </div>
+</div>
+
+        <a href="#Mig">
+            <img th:src="@{/images/billede-af-mig.png}" alt="Billede" class="billeder">
+        </a>
+        <div id="Mig" class="overlay">
+            <a href="#" class="close">&times;</a>
+            <img th:src="@{/images/billede-af-mig.png}" alt="Billede">
+        </div>
+
+    <p><a th:href="@{/}">Tilbage til forsiden</a></p>
+    <p><a th:href="@{/family}">Gå til 'Min familie'</a></p>
+</main>
 </body>
 </html>
